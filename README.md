@@ -3,7 +3,7 @@
 ### Doesn't support modes other than 24*80, at the moment.
 
 ## Usage
-```
+```C#
 Terminal terminal = new Terminal("mainframe.com", 23);
 terminal.WaitForTextAsync("Hello World");
 terminal.TrySetText(0, "UserBob");
