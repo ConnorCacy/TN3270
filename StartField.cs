@@ -8,6 +8,12 @@ namespace TN3270
 {
     class StartField
     {
+        public readonly int Index;
+        public readonly byte Attribute;
+        public bool ModifiedDataTag { get; set; }
+
+        public readonly bool CanEdit;
+
         public StartField(int index, byte attribute)
         {
             Index = index;
@@ -15,11 +21,7 @@ namespace TN3270
             CanEdit = (Attribute & 0x20) != 0x20;
             ModifiedDataTag = (Attribute & 0x01) == 0x01;
         }
-        public readonly int Index;
-        public readonly byte Attribute;
-        public bool ModifiedDataTag { get; set; }
-
-        public readonly bool CanEdit;
+        
 
         public override string ToString()
         {
